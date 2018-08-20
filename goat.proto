@@ -16,7 +16,19 @@ message Confirmation {
     string   msg       = 2;
 }
 
+message VmRecord {
+}
+
+message IpRecord {
+}
+
+message StorageRecord {
+}
+
 message AccountingDataChunk {
+    repeated VmRecord vms          = 1;
+    repeated IpRecord ips          = 2;
+    repeated StorageRecord storage = 3;
 }
 
 service AccountingService {
