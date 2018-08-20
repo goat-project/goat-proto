@@ -59,6 +59,26 @@ message IpRecord {
 }
 
 message StorageRecord {
+    string                    recordID                    = 1;
+    google.protobuf.Timestamp create_time                 = 2;
+    string                    storage_system              = 3;
+    string                    site                        = 4;
+    string                    storage_share               = 5;
+    string                    storage_media               = 6;
+    string                    storage_class               = 7;
+    string                    file_count                  = 8;
+    string                    directory_path              = 9;
+    string                    local_user                  = 10;
+    string                    local_group                 = 11;
+    string                    user_identity               = 12;
+    string                    group                       = 13;
+    string                    group_attribute             = 14;
+    string                    group_attribute_type        = 15;
+    google.protobuf.Timestamp start_time                  = 16;
+    google.protobuf.Timestamp end_time                    = 17;
+    uint64                    resource_capacity_used      = 18;
+    uint64                    logical_capacity_used       = 19;
+    uint64                    resource_capacity_allocated = 20;
 }
 
 message AccountingDataChunk {
