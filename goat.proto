@@ -17,6 +17,32 @@ message Confirmation {
 }
 
 message VmRecord {
+    string                    vm_uuid                 = 1;
+    string                    site_name               = 2;
+    string                    cloud_compute_service   = 3;
+    string                    machine_name            = 4;
+    string                    local_user_id           = 5;
+    string                    local_group_id          = 6;
+    string                    global_user_name        = 7;
+    string                    fqan                    = 8;
+    string                    status                  = 9;
+    google.protobuf.Timestamp start_time              = 10;
+    google.protobuf.Timestamp end_time                = 11;
+    string                    suspend_duration        = 12;
+    google.protobuf.Duration  wall_time               = 13;
+    google.protobuf.Duration  cpu_duration            = 14;
+    uint32                    cpu_count               = 15;
+    string                    network_type            = 16;
+    uint64                    network_inbound         = 17;
+    uint64                    network_outbound        = 18;
+    uint64                    public_ip_count         = 19;
+    uint64                    memory                  = 20;
+    uint64                    disk                    = 21;
+    string                    benchmark_type          = 22;
+    float                     benchmark               = 23;
+    string                    storage_record_id       = 24;
+    string                    image_id                = 25;
+    string                    cloud_type              = 26;
 }
 
 message IpRecord {
