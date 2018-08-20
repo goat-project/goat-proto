@@ -2,5 +2,17 @@ syntax = "proto3";
 
 package goat_grpc;
 
+message ClientIdentification {
+    string identifier = 1;
+}
+
+message Confirmation {
+    bool     confirmed = 1;
+    // filled only if confirmed == false, empty string otherwise
+    string   msg       = 2;
+}
+
+
 service AccountingService {
+    rpc Identify(ClientIdentification) returns (Confirmation);
 }
