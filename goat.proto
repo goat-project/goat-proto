@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package goat_grpc;
+
+service AccountingService {
+}
