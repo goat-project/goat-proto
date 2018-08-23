@@ -28,7 +28,7 @@ message VmRecord {
     string                    status                  = 9;
     google.protobuf.Timestamp start_time              = 10;
     google.protobuf.Timestamp end_time                = 11;
-    string                    suspend_duration        = 12;
+    google.protobuf.Duration  suspend_duration        = 12;
     google.protobuf.Duration  wall_time               = 13;
     google.protobuf.Duration  cpu_duration            = 14;
     uint32                    cpu_count               = 15;
