@@ -5,6 +5,7 @@ package goat_grpc;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
 
 message ClientIdentification {
     string identifier = 1;
@@ -19,36 +20,36 @@ message Confirmation {
 message VmRecord {
     string                    vm_uuid                 = 1;
     string                    site_name               = 2;
-    string                    cloud_compute_service   = 3;
+    google.protobuf.StringValue cloud_compute_service = 3;
     string                    machine_name            = 4;
-    string                    local_user_id           = 5;
-    string                    local_group_id          = 6;
-    string                    global_user_name        = 7;
-    string                    fqan                    = 8;
-    string                    status                  = 9;
+    google.protobuf.StringValue local_user_id         = 5;
+    google.protobuf.StringValue local_group_id        = 6;
+    google.protobuf.StringValue global_user_name      = 7;
+    google.protobuf.StringValue fqan                  = 8;
+    google.protobuf.StringValue status                = 9;
     google.protobuf.Timestamp start_time              = 10;
     google.protobuf.Timestamp end_time                = 11;
     google.protobuf.Duration  suspend_duration        = 12;
     google.protobuf.Duration  wall_duration           = 13;
     google.protobuf.Duration  cpu_duration            = 14;
     uint32                    cpu_count               = 15;
-    string                    network_type            = 16;
-    uint64                    network_inbound         = 17;
-    uint64                    network_outbound        = 18;
-    uint64                    public_ip_count         = 19;
-    uint64                    memory                  = 20;
-    uint64                    disk                    = 21;
-    string                    benchmark_type          = 22;
-    float                     benchmark               = 23;
-    string                    storage_record_id       = 24;
-    string                    image_id                = 25;
-    string                    cloud_type              = 26;
+    google.protobuf.StringValue network_type          = 16;
+    google.protobuf.UInt64Value network_inbound       = 17;
+    google.protobuf.UInt64Value network_outbound      = 18;
+    google.protobuf.UInt64Value public_ip_count       = 19;
+    google.protobuf.UInt64Value memory                = 20;
+    google.protobuf.UInt64Value disk                  = 21;
+    google.protobuf.StringValue benchmark_type        = 22;
+    google.protobuf.FloatValue benchmark              = 23;
+    google.protobuf.StringValue storage_record_id     = 24;
+    google.protobuf.StringValue image_id              = 25;
+    google.protobuf.StringValue cloud_type            = 26;
 }
 
 message IpRecord {
     google.protobuf.Timestamp measurement_time      = 1;
     string                    site_name             = 2;
-    string                    cloud_compute_service = 3;
+    google.protobuf.StringValue cloud_compute_service = 3;
     string                    cloud_type            = 4;
     string                    local_user            = 5;
     string                    local_group           = 6;
@@ -62,23 +63,23 @@ message StorageRecord {
     string                    recordID                    = 1;
     google.protobuf.Timestamp create_time                 = 2;
     string                    storage_system              = 3;
-    string                    site                        = 4;
-    string                    storage_share               = 5;
-    string                    storage_media               = 6;
-    string                    storage_class               = 7;
-    string                    file_count                  = 8;
-    string                    directory_path              = 9;
-    string                    local_user                  = 10;
-    string                    local_group                 = 11;
-    string                    user_identity               = 12;
-    string                    group                       = 13;
-    string                    group_attribute             = 14;
-    string                    group_attribute_type        = 15;
+    google.protobuf.StringValue site                      = 4;
+    google.protobuf.StringValue storage_share             = 5;
+    google.protobuf.StringValue storage_media             = 6;
+    google.protobuf.StringValue storage_class             = 7;
+    google.protobuf.StringValue file_count                = 8;
+    google.protobuf.StringValue directory_path            = 9;
+    google.protobuf.StringValue local_user                = 10;
+    google.protobuf.StringValue local_group               = 11;
+    google.protobuf.StringValue user_identity             = 12;
+    google.protobuf.StringValue group                     = 13;
+    google.protobuf.StringValue group_attribute           = 14;
+    google.protobuf.StringValue group_attribute_type      = 15;
     google.protobuf.Timestamp start_time                  = 16;
     google.protobuf.Timestamp end_time                    = 17;
     uint64                    resource_capacity_used      = 18;
-    uint64                    logical_capacity_used       = 19;
-    uint64                    resource_capacity_allocated = 20;
+    google.protobuf.UInt64Value logical_capacity_used       = 19;
+    google.protobuf.UInt64Value resource_capacity_allocated = 20;
 }
 
 message AccountingDataChunk {
