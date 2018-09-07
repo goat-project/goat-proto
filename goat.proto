@@ -78,13 +78,8 @@ message StorageRecord {
     google.protobuf.UInt64Value resource_capacity_allocated = 20;
 }
 
-message AccountingDataChunk {
-    repeated VmRecord vms          = 1;
-    repeated IpRecord ips          = 2;
-    repeated StorageRecord storage = 3;
-    string   client_identifier     = 4;
-}
-
 service AccountingService {
-    rpc Process(AccountingDataChunk) returns (Confirmation);
+    rpc ProcessVms(string, stream VmRecord) returns (Confirmation);
+    rpc ProcessIps(string, stream IpRecord) returns (Confirmation);
+    rpc ProcessStorage(string, stream StorageRecord) returns (Confirmation);
 }
