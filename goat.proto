@@ -78,8 +78,23 @@ message StorageRecord {
     google.protobuf.UInt64Value resource_capacity_allocated = 20;
 }
 
+message VmRecords {
+    string identifier = 1;
+    repeated VmRecord vms = 2;
+}
+
+message IpRecords {
+    string identifier = 1;
+    repeated IpRecord ips = 2;
+}
+
+message StorageRecords {
+    string identifier = 1;
+    repeated StorageRecord storages = 2;
+}
+
 service AccountingService {
-    rpc ProcessVms(string, stream VmRecord) returns (Confirmation);
-    rpc ProcessIps(string, stream IpRecord) returns (Confirmation);
-    rpc ProcessStorage(string, stream StorageRecord) returns (Confirmation);
+    rpc ProcessVms(stream VmRecords) returns (Confirmation);
+    rpc ProcessIps(stream IpRecords) returns (Confirmation);
+    rpc ProcessStorage(stream StorageRecords) returns (Confirmation);
 }
