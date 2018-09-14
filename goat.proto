@@ -81,17 +81,17 @@ message StorageRecord {
 
 message VmRecords {
     string identifier = 1;
-    repeated VmRecord vms = 2;
+    VmRecord vm = 2;
 }
 
 message IpRecords {
     string identifier = 1;
-    repeated IpRecord ips = 2;
+    IpRecord ip = 2;
 }
 
 message StorageRecords {
     string identifier = 1;
-    repeated StorageRecord storages = 2;
+    StorageRecord storage = 2;
 }
 
 service AccountingService {
