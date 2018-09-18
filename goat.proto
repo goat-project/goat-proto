@@ -7,13 +7,6 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/wrappers.proto";
 
-message Confirmation {
-    // if accepted == false, server rejected data from the client
-    bool     accepted = 1;
-    // filled only if accepted == false, empty string otherwise
-    string   msg       = 2;
-}
-
 message VmRecord {
     string                    vm_uuid                 = 1;
     string                    site_name               = 2;
