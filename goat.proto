@@ -73,7 +73,7 @@ message StorageRecord {
 }
 
 message AccountingData {
-    oneof {
+    oneof data {
         // identifier MUST be the first message of the stream
         string identifier = 1;
         VmRecord vm = 2;
