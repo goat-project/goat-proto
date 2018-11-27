@@ -72,16 +72,31 @@ message StorageRecord {
     google.protobuf.UInt64Value resource_capacity_allocated = 20;
 }
 
-message AccountingData {
+message VmData {
     oneof data {
         // identifier MUST be the first message of the stream
         string identifier = 1;
         VmRecord vm = 2;
-        IpRecord ip = 3;
-        StorageRecord storage = 4;
+    }
+}
+message IpData {
+    oneof data {
+        // identifier MUST be the first message of the stream
+        string identifier = 1;
+        IpRecord ip = 2;
+    }
+}
+
+message StorageData {
+    oneof data {
+        // identifier MUST be the first message of the stream
+        string identifier = 1;
+        StorageRecord storage = 2;
     }
 }
 
 service AccountingService {
-    rpc Process(stream AccountingData) returns (google.protobuf.Empty);
+    rpc ProcessVms(stream VmData) returns (google.protobuf.Empty);
+    rpc ProcessIps(stream IpData) returns (google.protobuf.Empty);
+    rpc ProcessStorages(stream StorageData) returns (google.protobuf.Empty);
 }
