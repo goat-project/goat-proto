@@ -75,21 +75,21 @@ message StorageRecord {
 }
 
 message GPURecord {
-    google.protobuf.UInt64Value measurement_month      = 1;
-    google.protobuf.UInt64Value measurement_year       = 2;
-    google.protobuf.StringValue associated_record_type = 3;
-    google.protobuf.StringValue associated_record      = 4;
-    string                      global_user_name       = 5;
-    google.protobuf.StringValue fqan                   = 6;
-    google.protobuf.StringValue site_name              = 7;
-    google.protobuf.FloatValue  count                  = 8;
-    uint32                      cores                  = 9;
-    uint64                      active_duration        = 10;
-    google.protobuf.UInt64Value available_duration     = 11;
-    string                      benchmark_type         = 12;
-    float                       benchmark              = 13;
-    google.protobuf.StringValue type                   = 14;
-    string                      model                  = 15;
+    uint64                      measurement_month      = 1;
+    uint64                      measurement_year       = 2;
+    string                      associated_record_type = 3;
+    string                      associated_record      = 4;
+    google.protobuf.StringValue global_user_name       = 5;
+    string                      fqan                   = 6;
+    string                      site_name              = 7;
+    float                       count                  = 8;
+    google.protobuf.UInt32Value cores                  = 9;
+    google.protobuf.UInt64Value active_duration        = 10;
+    uint64                      available_duration     = 11;
+    google.protobuf.StringValue benchmark_type         = 12;
+    google.protobuf.FloatValue  benchmark              = 13;
+    string                      type                   = 14;
+    google.protobuf.StringValue model                  = 15;
 }
 
 message VmData {
